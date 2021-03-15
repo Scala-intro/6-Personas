@@ -7,6 +7,9 @@
 5. [Crear función para procesar personas](#schema5)
 6. [Conexión con SparkSQL](#schema6)
 7. [Procesar la inforamción](#schema7)
+8. [Convertir el dataframe a dataset](#schema8)
+9. [Crear datos temporales](#schema9)
+10. [Queries](#schema10)
 
 
 <hr>
@@ -94,3 +97,30 @@ val esctrucuturaDatos = personas.toDS
 esctrucuturaDatos.printSchema
 ~~~
 ![scala](./images/001.png)
+
+
+<hr>
+
+<a name="schema9"></a>
+
+# 9. Crear datos temporales
+Creamos un datos temporales que se destruyen cuando acabe el programa.
+~~~scala
+estructuraDatos.createOrReplaceTempView("personas")
+~~~
+
+`personas` es parecido a una tabla de SQL para poder hacerle queries
+
+<hr>
+
+<a name="schema10"></a>
+
+# 10. Queries
+
+Obtener los mayores de edad. 
+~~~scala
+val mayoresEdad = spark.sql("SELECT * FROM personas WHERE edad >= 18")
+val resultados = mayoresEdad.collect()
+~~~
+
+![scala](./images/002.png)

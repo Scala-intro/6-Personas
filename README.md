@@ -9,15 +9,6 @@
 7. [Procesar la inforamción](#schema7)
 
 
-
-
-
-
-
-
-5. [Aplicar "procesarLinea"](#schema5)
-6. [Imprimir valores](#schema6)
-
 <hr>
 
 <a name="schema1"></a>
@@ -102,4 +93,4 @@ Con printSchema imprimimos el esquema de los datos
 val esctrucuturaDatos = personas.toDS
 esctrucuturaDatos.printSchema
 ~~~
-![scala](./image/001.png)
+![scala](./images/001.png)
